@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Auf Mobilen Endgeräten wird im Eingabefeld nicht hineingezoomt -->
+    <title>Video-Notiz Applikation IM5</title>
+    <link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+    <header>
+        <h1>Video-Notiz  Applikation IM6</h1>
+        <h2>Zum Film "Ni d'Eve, ni d'Adam: une histoire intersexe"</h2>
+        <h3>Bachelorarbeit von Anja Klose mmp21cv</h3>
+    </header>
+    <div id="videoContainer">
+        <video id="videoPlayer" controls>
+            <source src="video/video1.mp4" type="video/mp4">
+            Ihr Browser unterstützt keine Video-Tags.
+        </video>
+        <div id="timelineContainer">
+            <div id="timeline"></div>
+        </div>
+        <div id="noteSection">
+            <input type="text" id="noteInput" placeholder="Notiz hier eingeben">
+            <div id="categoryContainer">
+                <label><input type="checkbox" value="A"> A</label>
+                <label><input type="checkbox" value="B"> B</label>
+                <label><input type="checkbox" value="C"> C</label>
+                <label><input type="checkbox" value="D"> D</label>
+                <label><input type="checkbox" value="E"> E</label>
+            </div>
+            <button id="saveNote">Notiz speichern</button>
+        </div>
+        <ul id="notesList">
+            <!-- Notizen werden hier aufgelistet -->
+        </ul>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#videoContainer {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 70%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#timelineContainer {
+    width: 100%;
+    padding: 10px 0;
+}
+
+#timeline {
+    position: relative;
+    height: 5px;
+    background-color: #ccc;
+}
+
+.timeline-point {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    top: -2.5px; /* Zentriert den Punkt vertikal auf dem Zeitstrahl */
+}
+
+#noteSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#noteInput {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#categoryContainer label {
+    display: block;
+    margin: 5px 20px 0px 20px;
+}
+
+#notesList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#notesList li {
+    background-color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    position: relative;
+    padding-right: 120px; /* Erhöhter Platz für die Buttons */
+}
+
+#notesList li div {
+    cursor: pointer;
+}
+
+#notesList button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 30px; /* Etwas Abstand zwischen den Buttons */
+    background-color: #4c6baf; /* Grüne Hintergrundfarbe */
+    color: white; /* Weißer Text */
+    padding: 8px 15px; /* Vertikales und horizontales Padding */
+    border: none; /* Kein Rand */
+    border-radius: 4px; /* Abgerundete Ecken */
+    font-size: 14px; /* Schriftgröße */
+    cursor: pointer; /* Mauszeiger als Finger */
+    transition: background-color 0.3s; /* Sanfter Übergang für den Hintergrund */
+    transform: translateY(-50%);
+    width: 96px; /* Feste Breite für alle Buttons */
+}
+
+/* Hover-Effekt für Buttons in der Notizliste */
+#notesList button:hover {
+    background-color: rgb(163, 180, 224); 
+}
+
+/* Focus-Effekt für Buttons in der Notizliste */
+#notesList button:focus {
+    outline: none; /* Entfernt den Standard-Fokus-Rahmen */
+    box-shadow: 0 0 0 2px rgba(23, 29, 74, 0.5); /* Blauer Fokus-Schatten */
+}
+
+#notesList button:nth-of-type(1) {
+    right: 120px;
+}
+
+#notesList button:nth-of-type(2) {
+    right: 20px;
+}
+
+#saveNote {
+    background-color: #4c6baf; /* Grüne Hintergrundfarbe */
+    color: white; /* Weißer Text */
+    border: none; /* Kein Rand */
+    border-radius: 4px; /* Abgerundete Ecken */
+    font-size: 14px; /* Schriftgröße */
+    cursor: pointer; /* Mauszeiger als Finger */
+    transition: background-color 0.3s; /* Sanfter Übergang für den Hintergrund */
+    width: 96px; /* Feste Breite für alle Buttons */
+    margin: 0px 20px 0px 0px;
+}
+
+/* Hover-Effekt für Notiz speichern */
+#saveNote:hover {
+    background-color: rgb(163, 180, 224); 
+}
+
+/* Focus-Effekt für Notiz speichern */
+#saveNote:focus {
+    outline: none; 
+    box-shadow: 0 0 0 2px rgba(23, 29, 74, 0.5); /* Blauer Fokus-Schatten */
+}
+
+
+
+/* Media Queries */
+
+/* Für mittelgroße Bildschirme (z.B. Tablets) */
+@media (max-width: 768px) {
+    #videoContainer {
+        width: 90%;
+        padding: 10px;
+    }
+
+    header {
+        padding: 5px 10px;
+    }
+
+    h1, h2, h3 {
+        font-size: smaller;
+    }
+}
+
+/* Für kleine Bildschirme (z.B. Smartphones) */
+@media (max-width: 480px) {
+    #videoContainer {
+        width: 100%; /* Volle Breite auf kleinen Bildschirmen */
+    }
+
+    video {
+        width: 100%; /* Stelle sicher, dass das Video responsiv ist */
+        height: auto;
+    }
+
+    #noteSection {
+        display: flex;
+        flex-direction: column; /* Stapelt Elemente vertikal auf kleineren Bildschirmen */
+    }
+
+    #noteInput {
+        width: 100%; /* Volle Breite für Eingabefeld und Schaltfläche */
+        margin-bottom: 10px; /* Fügt etwas Abstand hinzu */
+    }
+
+    /* Pass die Größe und das Layout der Buttons in der Notizenliste an */
+    #notesList button {
+        font-size: 12px; /* Kleinere Schriftgröße */
+        padding: 5px 10px; /* Reduziertes Padding */
+        margin: 2px 0; /* Weniger Abstand zwischen den Buttons */
+        position: absolute;
+        right: 10px; /* Beispielwert, anpassen nach Bedarf */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #saveNote {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    #notesList li {
+        padding-right: 80px; /* Beispielwert, anpassen nach Bedarf */
+    }
+}
+
+
