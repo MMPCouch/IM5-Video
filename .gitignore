@@ -1,0 +1,7 @@
+.vscode
+.DS_Stores
+.Trashes
+*.zip
+config.php
+*video1.mp4
+.videos
